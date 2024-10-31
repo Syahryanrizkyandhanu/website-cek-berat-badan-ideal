@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="info-section">
+            <h2>Apa itu Kalkulator BMI?</h2>
+            <p>Kalkulator BMI adalah alat untuk mengidentifikasi apakah berat badan kamu termasuk dalam kategori ideal
+                atau tidak. Kalkulator ini dapat digunakan oleh seseorang yang berusia 20 tahun ke atas.<br><br>
+                Perlu diingat bahwa Kalkulator BMI ini tidak dapat diaplikasikan untuk ibu hamil dan anak-anak karena
+                standar BMI yang berbeda.</p>
+            <h2>Hal yang perlu diperhatikan pada Kalkulator BMI:</h2>
+            <p>Normal berada pada kisaran 18.5-24.9</p>
+            <p>Jika angka BMI melebihi 25, maka kamu memiliki berat badan berlebih</p>
+            <p>Jika angka BMI berada di bawah 18.5, maka kamu memiliki berat badan rendah</p>
+            <p>Jika angka BMI sudah melebihi angka 25, sebaiknya segera dilakukan penanganan untuk mencegah
+                timbulnya penyakit</p>
+        </div>
+
+
+
+        <div class="container">
+            <!-- Input Container -->
+            <div id="input-container">
+                <h1>Kalkulator BMI</h1>
+
+                <div class="gender-selection">
+                    <div class="gender male selected" onclick="selectGender('male')">
+                        <img src="img/male.png" alt="Male">
+                        <span>Laki-laki</span>
+                    </div>
+                    <div class="gender female" onclick="selectGender('female')">
+                        <img src="img/female.png" alt="Female">
+                        <span>Perempuan</span>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <label for="height">Tinggi (cm) *</label>
+                    <input type="number" id="height" placeholder="Masukkan tinggi badan">
+                </div>
+
+                <div class="input-field">
+                    <label for="weight">Berat (kg) *</label>
+                    <input type="number" id="weight" placeholder="Masukkan berat badan">
+                </div>
+
+                <p id="alert-message" class="alert"></p> <!-- Element untuk alert message -->
+
+                <button onclick="calculateBMI()">HITUNG BMI</button>
+
+
+
+            </div>
+
+            <!-- Result Container -->
+            <div class="result-container" id="result-container" style="display: none;">
+                <div class="result-header">
+                    <h2 id="gender-result">BMI untuk </h2><br>
+                    <h3 id="bmi-status"></h3><br>
+                </div>
+                <div class="bmi-details">
+                    <p>Tinggi (cm): <span id="display-height"></span></p>
+                    <p>Berat (kg): <span id="display-weight"></span></p>
+                </div>
+                <div class="bmi-indicator">
+                    <div class="indicator-bar">
+                        <span class="indicator-point" id="bmi-point">19.4</span>
+                    </div>
+                </div>
+                <p id="advice-text">Pastikan asupan kalori sesuai dengan kebutuhan kalori harian & konsumsi makanan
+                    sehat
+                </p>
+                <a href="#" onclick="resetForm()">🔄 Cek Ulang</a>
+            </div>
+        </div>
+
+
+        <script src="javascript.js"></script>
+</body>
+
+</html>
